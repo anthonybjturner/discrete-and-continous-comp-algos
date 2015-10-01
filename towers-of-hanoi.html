@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="Towers of Hanoi algorithm">
+  <meta name="turnera1" content="Algorithms">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    
+    
+    
+    
+    <div>
+        
+        
+        
+        
+    </div>
+    <div id="message-area">
+        
+        
+    </div>
+    
+    
+    
+    
+  <script>
+      
+      
+      function towers(n, frompeg, topeg, auxpeg, pos){
+          
+          if (n == 1  ){
+              
+            print ('('+pos+') move disk', 1, 'from peg', frompeg, 'to peg', topeg);
+          }
+          else{
+              
+            towers( n-1, frompeg, auxpeg, topeg, 'left');
+            print ('(center) move disk', n, 'from peg', frompeg, 'to peg', topeg);
+            towers (n-1 , auxpeg, topeg, frompeg, 'right');
+ 
+            }
+      
+         }
+         
+         
+         function print(msg, n, msg2 ,frompeg, msg3,topeg){
+             
+             var currentHTML =  document.getElementById("message-area").innerHTML
+             
+             document.getElementById("message-area").innerHTML = currentHTML + "<br>" + ( "<span>" +  msg + " "+ n + " " + msg2 + " " + frompeg + " "  + msg3  + " " + topeg + "</span><br>");
+             
+         }
+     
+      
+      towers(3,'a','c','b');
+      
+  </script>
+</body>
+</html>
